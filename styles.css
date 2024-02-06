@@ -1,0 +1,99 @@
+body::before {
+    content: "";
+    background-image: url('image.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(270deg); /* Update rotation to 270 degrees */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    animation: floatUpDown 5s infinite;
+}
+
+@keyframes floatUpDown {
+    0% {
+        transform: rotate(270deg) translateY(0) scale(1);
+        filter: grayscale(0);
+    }
+
+    50% {
+        transform: rotate(270deg) translateY(-10px) scale(1.1);
+        filter: grayscale(1);
+        box-shadow: 3px 3px 10px black;
+    }
+
+    100% {
+        transform: rotate(270deg) translateY(0) scale(1);
+        filter: grayscale(0);
+    }
+}
+
+header {
+    background-color: #e85a71;
+    color: #fff;
+    padding: 20px;
+    font-size: 24px;
+}
+
+#days-section {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    margin: 10px;
+    padding: 15px;
+    display: inline-block;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Customize colors for each day */
+#day1 { background-color: #ff7070; order: -1; }
+#day2 { background-color: #ff9c70; order: -1; }
+#day3 { background-color: #ffa770; order: -1; }
+#day4 { background-color: #ffbe70; order: 1; }
+#day5 { background-color: #ffd670; order: 1; }
+#day6 { background-color: #ffeb70; order: 1; }
+#day7 { background-color: #f7ff70; order: 2; }
+
+a:hover {
+    background-color: #ffc800;
+}
+
+/* Heart animation */
+.heart-icon {
+    position: absolute;
+    left: -5px; /* Adjust this value for spacing */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #e85a71; /* Heart color */
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Add fadeInUp animation class from animate.css */
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}

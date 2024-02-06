@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Week Celebration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0px;
+            background-color: #177b8d;
+            text-align: center;
+        }
+
+        #days-section {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+        }
+
+        audio {
+            display: none;
+        }
+
+        video {
+            display: none;
+        }
+
+        #playButton {
+            background-color: #e85a71;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Autoplay audio on page load -->
+    <audio autoplay loop>
+        <source src="song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Muted video for autoplay -->
+    <video autoplay muted loop id="bgVideo" style="display:none">
+        <source src="song.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1 class="animate__animated animate__fadeIn">Let's Celebrate Our Valentine Week!</h1>
+    </header>
+
+    <section id="days-section">
+        <a href="day1.html" class="animate__animated animate__fadeInUp" id="day1"><span class="heart-icon">&#x2665;</span> Day 1: Rose Day</a>
+        <a href="index1.html" class="animate__animated animate__fadeInUp" id="day2"><span class="heart-icon">&#x2665;</span> Day 2: Propose Day</a>
+        <a href="index1.html" class="animate__animated animate__fadeInUp" id="day3"><span class="heart-icon">&#x2665;</span> Day 3: Chocolate Day</a>
+        <a href="index1.html" class="animate__animated animate__fadeInUp" id="day4"><span class="heart-icon">&#x2665;</span> Day 4: Teddy Day</a>
+        <a href="index1.html" class="animate__animated animate__fadeInUp" id="day5"><span class="heart-icon">&#x2665;</span> Day 5: Promise Day</a>
+        <a href="index1.html" class="animate__animated animate__fadeInUp" id="day6"><span class="heart-icon">&#x2665;</span> Day 6: Hug Day</a>
+        <a href="index1.html" class="animate__animated animate__fadeInUp" id="day7"><span class="heart-icon">&#x2665;</span> Day 7: Kiss Day</a>
+    </section>
+
+    <button id="playButton">Play Audio</button>
+
+    <script src="script.js"></script>
+    <script src="falling_hearts.js"></script>
+
+    <script>
+        // Autoplay video on page load
+        document.getElementById('bgVideo').style.display = 'block';
+
+        // Add event listener to play audio on button click
+        document.getElementById('playButton').addEventListener('click', function () {
+            document.querySelector('audio').play();
+        });
+    </script>
+</body>
+
+</html>
